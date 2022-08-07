@@ -1,0 +1,42 @@
+@import url('./navbar.css');
+@import url('./home.css');
+/* @import url('./login.css'); */
+@import url('./addGame.css');
+@import url('./addGame.css');
+@import url('./addGame.css');
+@import url('./addGame.css');
+*{
+  position: relative;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color:  white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+.App {
+  background-image: url('../images/cinema.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.noFilms{
+  position: absolute;
+  display: block;
+  text-align: center;
+  margin: auto;
+  font-size: 2rem;
+  width: 100%;
+  margin-top: 7em;
+}

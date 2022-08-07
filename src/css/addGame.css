@@ -1,0 +1,22 @@
+.loginForm {
+    position: absolute;
+    width: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2rem;
+    background-color: rgba(0, 0, 0, 0.732);
+}
+.loginForm li {
+    list-style: none;
+}
+.loginForm li > * {
+    display: block;
+    font-size: 2rem;
+    margin-top: .5em;
+}
+.loginForm ul li input , .loginForm ul li textarea {
+    width: 90%;
+}
+.submitBtn {
+    margin-top: 2em;
+}
