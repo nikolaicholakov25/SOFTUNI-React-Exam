@@ -51,15 +51,15 @@ export const createFilm = (film) => {
 }
 
 
-export const deleteGame = (gameId) => {
-    let suffix = `data/games/${gameId}`
+export const deleteFilm = (filmId) => {
+    let suffix = `films/${filmId}`
 
-    // let acc = showSession().accessToken
+    let acc = showSession().accessToken
 
     return fetch(`${url}${suffix}` , {
         method: 'delete',
         headers: {
-            // "X-Authorization": acc
+            "X-Authorization": acc
         },
     })
     .then(res => res.json())

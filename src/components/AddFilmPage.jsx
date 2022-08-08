@@ -1,7 +1,12 @@
+import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { createFilm } from "../services/filmServices"
+import { UserSessionContext } from "./contexts/userSessionContext"
 
 export const AddFilmPage = (props) => {
+
+    let {userSession} = useContext(UserSessionContext)
+
     let navigate = useNavigate()
     const onAddFilm = (e) => {
         e.preventDefault()
@@ -15,7 +20,8 @@ export const AddFilmPage = (props) => {
             category,
             description,
             imageUrl,
-            price
+            price,
+            creatorId: userSession._id
         }
 
         if(title && category && description && imageUrl && price !== ''){
