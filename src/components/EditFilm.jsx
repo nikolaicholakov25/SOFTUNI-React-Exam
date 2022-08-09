@@ -24,20 +24,19 @@ export const EditFilmPage = (props) => {
 
         let form = new FormData(document.getElementById('form'))
 
-        let [title,category,description,imageUrl,price, likes] = form.values()
-
-        let film = {
+        let [title,category,description,imageUrl,price] = form.values()
+        let film1 = {
             title,
             category,
             description,
             imageUrl,
             price,
             creatorId: userSession._id,
-            likes
+            likes: film.likes
         }
 
         if(title && category && description && imageUrl && price !== ''){
-            editFilm(filmId, film)
+            editFilm(filmId, film1)
             .then(x => navigate(`/film-details/${filmId}`))
         } else {
             alert('please fill all fields')

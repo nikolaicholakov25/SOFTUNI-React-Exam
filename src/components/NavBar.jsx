@@ -23,14 +23,14 @@ export const NavBar = () => {
                 {userSession 
                 ?
                 <>
-                    <li><Link to={'/all-films'}>All Films</Link ></li>
+                    <li><Link to={'/'}>All Films</Link ></li>
                     <li><Link to={'/kids-movies'} >For Kids</Link ></li>
                     <li><Link to={'/add-film'}>Add Film</Link ></li>
                     <li><Link onClick={logoutHandler} to={'/'}>Log Out</Link ></li>
                 </>
                 :
                 <>
-                    <li><Link to={'/all-films'}>All Films</Link ></li>
+                    <li><Link to={'/'}>All Films</Link ></li>
                     <li><Link to={'/kids-movies'} >For Kids</Link ></li>
                     <li><Link to={'/login'}>Login</Link ></li>
                     <li><Link to={'/register'}>Register</Link ></li>

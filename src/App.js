@@ -3,7 +3,6 @@ import { Routes , Route } from "react-router-dom";
 import { Home } from "./components/Home";
 import { NavBar } from "./components/NavBar";
 import { Programme } from "./components/Programme";
-import { MostWatched } from "./components/MostWatched";
 import { LoginPage} from './components/LoginPage'
 import {AddFilmPage} from './components/AddFilmPage'
 import {showSession} from './services/userServices'
@@ -29,7 +28,6 @@ function App() {
           <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/film-gallery" element={<Programme />} />
-          <Route path="/all-films" element={<MostWatched />} />
           <Route path="/add-film" element={<AddFilmPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />

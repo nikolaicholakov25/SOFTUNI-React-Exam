@@ -5,7 +5,7 @@ import { UserSessionContext } from "./contexts/userSessionContext"
 
 
 export const FilmDetails = () => {
-    let {userSession , library} = useContext(UserSessionContext)
+    let {userSession} = useContext(UserSessionContext)
     let navigate = useNavigate()
     let userId
 
@@ -27,12 +27,12 @@ export const FilmDetails = () => {
 
     }, [] )
 
-    // console.log(userLiked);
+    console.log(film);
 
     const updateStateForLikes = async () => {
 
         let film = await getFilm(filmId)
-
+        console.log(film);
         for(let i =0;i<film.likes.length;i++){
             if(film.likes[i] === userId){
                 setLiked(true)
@@ -40,6 +40,14 @@ export const FilmDetails = () => {
             else {
                 // console.log('doestn go in');
             }
+        }
+    }
+
+    const checkLike = () => {
+        if(userLiked){
+            alert('You have already liked this film')
+        } else {
+            alert('You can like this movie by pressing "Like"')
         }
     }
     
@@ -67,6 +75,10 @@ export const FilmDetails = () => {
     return (
         <div className="filmdetails">
             <div className="img">
+                <div className="pricetag"><i class="fa-solid fa-bookmark">
+                <h6 className="price">{film.price}<i class="fa-solid fa-dollar-sign"></i></h6>
+                </i>
+               </div>
                 <img src={film.imageUrl} alt="filmImg" />
             </div>
 
@@ -86,6 +98,9 @@ export const FilmDetails = () => {
                             <Link to={`/delete/${filmId}`}>
                             <button onClick={onDeleteHandler} className="delete">Delete</button>
                             </Link>
+                            <button onClick={checkLike} className="likes"><i className="fa-solid fa-heart"></i>{
+                                film.likes ? film.likes.length : null
+                            }</button>
                         </>
                         :
                         <>
@@ -100,7 +115,7 @@ export const FilmDetails = () => {
 
                         {film.likes
                         ? 
-                        <div className="likes"><h2><i className="fa-solid fa-heart"></i>{film.likes.length}</h2></div>
+                        <button onClick={checkLike} className="likes"><i className="fa-solid fa-heart"></i>{film.likes.length}</button>
                         : null
                         }
                         </>

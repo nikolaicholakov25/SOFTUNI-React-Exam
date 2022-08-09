@@ -9,10 +9,11 @@ export const Home = () => {
 
     let [films, getFilms] = useState({})
 
-    useEffect(() => {
+    useEffect( () => {
         filmServices.getAll()
         .then(r => getFilms(r))
     } , [])
+
 
     return (
         <div>
@@ -24,7 +25,7 @@ export const Home = () => {
                 </div>
 
                 <HomeGallery 
-                films={Object.values(films)}
+                films={Object.entries(films)}
                 />
             </section>
         </div>

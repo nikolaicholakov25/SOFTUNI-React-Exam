@@ -6,8 +6,10 @@
     margin-top: 5rem;
 }
 .img img {
+    border-radius: .5rem;
     width: 100%;
     height: 100%;
+    border: 1px solid white;
 }
 
 .filmdetails {
@@ -43,7 +45,7 @@
 .buttons {
     margin-top: 6em;
     justify-content:space-between ;
-    border: 1px solid white;
+    /* border: 1px solid white; */
 }
 
 .buttons  button{
@@ -63,4 +65,33 @@
 }
 .buttons h2 > * {
     margin: 0 .7em;
+}
+.likes > * {
+    /* cursor: default; */
+    margin: 0 .5em;
+}
+.likes {
+    cursor: default;
+}
+
+.pricetag {
+    position: absolute;
+    z-index: 10;
+    font-size: 6.5rem;
+    top: -.1em;
+    right: .1em;
+}
+
+.pricetag  {
+    color: rgba(255, 255, 255, 0.758);
+}
+
+.price {
+    position: absolute;
+    color: black;
+    font-size: 1.5rem;
+    top: -1em;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
