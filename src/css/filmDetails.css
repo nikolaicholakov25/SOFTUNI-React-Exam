@@ -1,3 +1,5 @@
+@import url('../fontawesome-free-6.1.2-web/css/all.css');
+
 .img {
     width: 450px;
     height: 650px;
@@ -40,6 +42,8 @@
 
 .buttons {
     margin-top: 6em;
+    justify-content:space-between ;
+    border: 1px solid white;
 }
 
 .buttons  button{
@@ -56,4 +60,7 @@
     cursor: pointer;
     transform: scale(1.05);
 
+}
+.buttons h2 > * {
+    margin: 0 .7em;
 }

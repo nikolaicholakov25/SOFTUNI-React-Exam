@@ -1,15 +1,17 @@
 import { useContext } from "react"
-import { Link } from "react-router-dom"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 import { logout } from "../services/userServices"
 import { UserSessionContext } from "./contexts/userSessionContext"
 export const NavBar = () => {
 
+    let navigate = useNavigate()
     let {userSession , setChange} = useContext(UserSessionContext)
 
     const logoutHandler = (e) => {
         e.preventDefault()
         logout()
         .then(r => setChange(x => !x))
+        .then(x => navigate('/'))
     }
 
     return(

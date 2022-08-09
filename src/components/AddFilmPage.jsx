@@ -15,17 +15,18 @@ export const AddFilmPage = (props) => {
 
         let [title,category,description,imageUrl,price] = form.values()
 
-        let game = {
+        let film = {
             title,
             category,
             description,
             imageUrl,
             price,
-            creatorId: userSession._id
+            creatorId: userSession._id,
+            likes: []
         }
 
         if(title && category && description && imageUrl && price !== ''){
-            createFilm(game)
+            createFilm(film)
             .then(x => navigate('/'))
         } else {
             alert('please fill all fields')

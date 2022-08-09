@@ -10,8 +10,9 @@ import {showSession} from './services/userServices'
 import { UserSessionContext } from './components/contexts/userSessionContext';
 import { RegisterPage } from './components/RegisterPage';
 import { FilmDetails } from './components/FilmDetails';
-function App() {
+import { EditFilmPage } from './components/EditFilm';
 
+function App() {
   let [userSession , setUserSession] = useState(showSession())
   let [change, setChange] = useState(false)
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/film-details/:filmId" element={<FilmDetails />} />
+          <Route path="/edit/:filmId" element={<EditFilmPage />} />
           </Routes>
           </div>
         </UserSessionContext.Provider>

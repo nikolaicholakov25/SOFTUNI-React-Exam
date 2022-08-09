@@ -16,16 +16,16 @@ export const getFilm = (id) => {
     .then(res => res.json())
 }
 
-export const editGame =(id , body) => {
-    let suffix = `data/films/${id}`
+export const editFilm =(id , body) => {
+    let suffix = `films/${id}`
 
-    // let acc = showSession().accessToken
+    let acc = showSession().accessToken
 
     return fetch(`${url}${suffix}` , {
         method: 'put',
         headers: {
             'content-type' : 'application/json',
-            // "X-Authorization": acc
+            "X-Authorization": acc
         },
         body: JSON.stringify(body)
 
@@ -87,5 +87,18 @@ export const addComment = (gameId,comment) => {
             comment
         })
     })
+    .then(res => res.json())
+}
+
+export const addLikes = (id,body) => {
+    let suffix = `films/${id}`
+
+    return fetch(`${url}${suffix}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    }) 
     .then(res => res.json())
 }

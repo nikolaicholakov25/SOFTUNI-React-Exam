@@ -47,9 +47,11 @@ export const register = (email,password) => {
         },
         body: JSON.stringify({
             email,
-            password
+            password,
+            likes: []
         })
     })
     .then(res => res.json())
     .then(d => sessionStorage.setItem('user' , JSON.stringify(d)))
 }
+
