@@ -58,7 +58,8 @@ export const register = (email,password) => {
         body: JSON.stringify({
             email,
             password,
-            likes: []
+            likes: [],
+            "no": []
         })
     })
     .then(res => {
