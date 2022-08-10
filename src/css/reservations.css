@@ -1,0 +1,12 @@
+.reservationh1 {
+    padding-top: 0.1em;
+    font-size: 1.4rem;
+    width: 100%;
+    text-align: center;
+}
+
+.cardsSpace{
+    width: 90%;
+    margin: auto;
+    border: 1px solid white;
+}

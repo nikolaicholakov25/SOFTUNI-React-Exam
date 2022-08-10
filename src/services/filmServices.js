@@ -102,3 +102,16 @@ export const addLikes = (id,body) => {
     }) 
     .then(res => res.json())
 }
+
+export const reserveSeat = (id,body) => {
+    let suffix = `films/${id}`
+
+    return fetch(`${url}${suffix}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    }) 
+    .then(res => res.json())
+}

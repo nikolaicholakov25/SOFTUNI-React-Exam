@@ -22,7 +22,8 @@ export const AddFilmPage = (props) => {
             imageUrl,
             price,
             creatorId: userSession._id,
-            likes: []
+            likes: [],
+            reservations: []
         }
 
         if(title && category && description && imageUrl && price !== ''){

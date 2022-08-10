@@ -32,7 +32,8 @@ export const EditFilmPage = (props) => {
             imageUrl,
             price,
             creatorId: userSession._id,
-            likes: film.likes
+            likes: film.likes,
+            reservations: film.reservations
         }
 
         if(title && category && description && imageUrl && price !== ''){

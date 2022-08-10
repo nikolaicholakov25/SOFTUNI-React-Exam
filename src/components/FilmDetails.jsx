@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { useParams , Link, useNavigate} from "react-router-dom"
-import { addLikes, deleteFilm, getFilm } from "../services/filmServices"
+import { addLikes, deleteFilm, getFilm, reserveSeat } from "../services/filmServices"
 import { UserSessionContext } from "./contexts/userSessionContext"
 
 
@@ -16,6 +16,8 @@ export const FilmDetails = () => {
 
     let [film,setFilm] = useState({})
     let [userLiked,setLiked] = useState(false)
+    let [userReserved,setReserved] = useState(false)
+
     let {filmId} = useParams()
 
     let filmCreator = film.creatorId
@@ -24,6 +26,7 @@ export const FilmDetails = () => {
        getFilm(filmId)
        .then(r => setFilm(r))
        .then(x => updateStateForLikes())
+       .then(t => updateStateForReservation())
 
     }, [] )
 
@@ -32,7 +35,6 @@ export const FilmDetails = () => {
     const updateStateForLikes = async () => {
 
         let film = await getFilm(filmId)
-        console.log(film);
         for(let i =0;i<film.likes.length;i++){
             if(film.likes[i] === userId){
                 setLiked(true)
@@ -50,9 +52,28 @@ export const FilmDetails = () => {
             alert('You can like this movie by pressing "Like"')
         }
     }
-    
 
+    const updateStateForReservation = async () => {
+        let film = await getFilm(filmId)
+        for(let i =0;i<film.reservations.length;i++){
+            if(film.reservations[i] === userId){
+                setReserved(true)
+            }
+            else {
+                // console.log('doestn go in');
+            }
+        }
+    }
 
+    const reserveASeat = () => {
+        let updatedFilm = film
+        updatedFilm.reservations.push(userId)
+        console.log(film);
+
+        reserveSeat(filmId,updatedFilm)
+        .then(x => updateStateForReservation())
+
+    }
 
     const onDeleteHandler = (e) => {
         e.preventDefault()
@@ -67,9 +88,13 @@ export const FilmDetails = () => {
     const onLike =  () => {
         let updatedFilm = film
         updatedFilm.likes.push(userId)
-        console.log(updatedFilm);
+
         addLikes(filmId, updatedFilm)
         .then(x => updateStateForLikes())
+    }
+
+    const loginAlert = () => {
+        alert('Please Login to like')
     }
 
     return (
@@ -104,7 +129,11 @@ export const FilmDetails = () => {
                         </>
                         :
                         <>
-                        <button className="add-favorites">Add To Favorites</button>
+                        {userReserved 
+                        ? <Link to='/my-reservations'><button>You Are In! Check your reservations!</button></Link>
+                        :
+                        <button onClick={reserveASeat} className="add-favorites">Reserve A Seat</button>
+                         }
 
                         {userLiked === false
                         ? 
@@ -125,6 +154,11 @@ export const FilmDetails = () => {
                         Please log in to see the details!
                         </button>
                         </Link>
+                        }
+                        {film.likes 
+                        ? 
+                        <button onClick={loginAlert} className="likes"><i className="fa-solid fa-heart"></i>{film.likes.length}</button>
+                        : null
                         }
                     </div>
                 </div>

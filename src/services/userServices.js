@@ -59,7 +59,6 @@ export const register = (email,password) => {
             email,
             password,
             likes: [],
-            "no": []
         })
     })
     .then(res => {
