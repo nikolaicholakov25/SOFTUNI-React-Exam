@@ -18,6 +18,8 @@ export const RegisterPage = () => {
             register(email,password)
             .then(x => setChange(f => !f))
             .then(f => navigate('/'))
+        } else {
+            alert('Passwords does not match')
         }
     }
 

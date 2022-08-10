@@ -18,8 +18,18 @@ export const login = async (email,password) => {
                     password
                 })
             })
-            .then(res => res.json())
+            .then(res => {
+                if(res.ok) {
+                    return res.json()
+                } else {
+                    return res.json()
+                    .then(x => {
+                        throw new Error(x.message)
+                    })
+                }
+            })
             .then(d => sessionStorage.setItem('user' , JSON.stringify(d)))
+            .catch(err => alert(err))
 
 }
 
@@ -51,7 +61,17 @@ export const register = (email,password) => {
             likes: []
         })
     })
-    .then(res => res.json())
+    .then(res => {
+        if(res.ok) {
+            return res.json()
+        } else {
+            return res.json()
+            .then(x => {
+                throw new Error(x.message)
+            })
+        }
+    })
     .then(d => sessionStorage.setItem('user' , JSON.stringify(d)))
+    .catch(err => alert(err))
 }
 
