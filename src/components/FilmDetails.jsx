@@ -30,8 +30,6 @@ export const FilmDetails = () => {
 
     }, [] )
 
-    console.log(film);
-
     const updateStateForLikes = async () => {
 
         let film = await getFilm(filmId)
@@ -157,7 +155,9 @@ export const FilmDetails = () => {
                         }
                         {film.likes 
                         ? 
-                        <button onClick={loginAlert} className="likes"><i className="fa-solid fa-heart"></i>{film.likes.length}</button>
+                        userSession 
+                        ? null
+                        : <button onClick={loginAlert} className="likes"><i className="fa-solid fa-heart"></i>{film.likes.length}</button>
                         : null
                         }
                     </div>
