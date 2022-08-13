@@ -50,7 +50,6 @@
 }
 .homegallery {
     width: 95%;
-    box-shadow: none;
     margin: auto;
     height: 75vh;
     display: grid;
