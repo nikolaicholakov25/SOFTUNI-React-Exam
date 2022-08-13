@@ -16,7 +16,7 @@ export const MyReservations = () => {
     return (
         <div className="reservations">
             <div className="reservationh1"><h1>Reservations for {userSession.email}</h1></div>
-            <div className="cardsSpace">
+            <div className="homeGallery">
             <Reservations
                 films={Object.entries(films)}
                 />

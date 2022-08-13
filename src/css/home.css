@@ -57,7 +57,7 @@
     grid-auto-columns:20% ;
     overflow-x: auto;
     overflow-y: hidden;
-    gap: 4em;
+    gap: 3em;
 }
 
 .homegallery a {
@@ -65,13 +65,14 @@
     color: white;
     width: 350px;
     height: 85%;
-    margin-top: .5em;
+    margin-top: 1.5em;
+    margin-left: 1em;
     /* flex-basis: 20%; */
 }
 .card {
     border-radius: 1em;
-    width: 320px;
-    height: 90%;
+    width: 280px;
+    height: 85%;
     /* flex-basis: 20%; */
     border: 2px solid white;
     padding-bottom: 2px;
