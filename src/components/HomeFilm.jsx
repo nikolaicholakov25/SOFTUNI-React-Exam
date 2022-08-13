@@ -1,7 +1,6 @@
 import * as filmServices from '../services/filmServices'
 import { Link } from 'react-router-dom'
 export const HomeFilmCard = (props) => {
-
     let filmId = props[0]
     let info = props[1]
 
