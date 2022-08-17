@@ -6,24 +6,55 @@ This app uses
 - Java Script
 - HTML
 - CSS
+- SoftUni Practise server for storing user details and films
+
+## How To Start The App
+
+In the main folder there are to folders
+
+- App
+- Server
+
+You have to open two terminals and then go to each of the folders in these two terminals by typing:
+- "cd {folderName}"
+
+and then to start the react app use
+- npm start
+
+and to start the server use
+- node server
+
+After that a new window is going to be opened and you will be able to log in or register to start interacting with the app
+
+there is a pre-made user from the server for testing
+
+username: peter@abv.bg
+password: 123456
 
 ## Functionality
 
-The application allows loged in users to create, edit, delete, like and reserve films
+The application allows loged in users to create, edit, delete, like and reserve films.
 
-In the app a creator of a film can edit or delete a film
+In the app a creator of a film can EDIT or DELETE a film.
 
-A loged in user, not creator of the film can like and reserve a seat for this film
+A loged in user, not creator of the film can Like and Reserve a seat for a film.
 
-A guest user can view the film details and film likes, but cannot interact with the films
+A guest user can view the film details and film Likes, but cannot interact with the films.
 
-### `npm start`
+### Error Handling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Error handling is visible when an user makes a mistake trying to:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Register 
+- Log In
+- Edit a Film
+- Create a Film
+- Like a Film for second time
+- Tries to interact with a Film without login in
+
+The error handling is in the way of a window alert explaining whats wrong , that way the app will not crash when an error occurs.
+
+There is also a confirmation alert when trying to delete a film.
 
 ### `npm test`
 
