@@ -29,6 +29,7 @@ After that a new window is going to be opened and you will be able to log in or 
 there is a pre-made user from the server for testing
 
 username: peter@abv.bg
+
 password: 123456
 
 ## Functionality
