@@ -24,13 +24,13 @@ and then to start the react app use
 and to start the server use
 - node server
 
-After that a new window is going to be opened and you will be able to log in or register to start interacting with the app
+After that a new window is going to be opened and you will be able to login or register to start interacting with the app
 
 there is a pre-made user from the server for testing
 
-username: peter@abv.bg
+username: peter@abv.bg / password: 123456
 
-password: 123456
+There are 6 film titles and links to their posters for quicker film creation 
 
 ## Functionality
 
@@ -51,63 +51,30 @@ The Error handling is visible when an user makes a mistake trying to:
 - Edit a Film
 - Create a Film
 - Like a Film for second time
-- Tries to interact with a Film without login in
+- Tries to interact with a Film without loging in
 
 The error handling is in the way of a window alert explaining whats wrong , that way the app will not crash when an error occurs.
 
 There is also a confirmation alert when trying to delete a film.
 
-### `npm test`
+### React Usage in this App
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app has all its pages split into react (.jsx) components
 
-### `npm run build`
+I am using "useEffect" for the initial load of the pages to show all the movies, likes, reservation status and film details
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+"useState" to update the details on the page after an user makes a change
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+There is also a "Context" so i can avoid the prop drilling , the context in the app is called "UserSessionContext" and it includes the "userSession" state and the "setChange" state 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## userSession
 
-### `npm run eject`
+"userSession" is using sessionStorage to save the user details and the authentication token needed to EDIT, DELETE and CREATE a film.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Even after a refresh of the webpage these details are not lost. The sessionStorage is being generated after a successful Login or Register and its being destroyed after a log out.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## setChange
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+"setChage" is the function that changes the "change" state which is positioned in the "app.js" file
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This is being used only after a successful login, register or logout to update the navigation component of the app

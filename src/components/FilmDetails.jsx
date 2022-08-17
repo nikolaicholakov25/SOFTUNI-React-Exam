@@ -149,7 +149,7 @@ export const FilmDetails = () => {
                         :
                         <Link to={`/login`}>
                         <button>
-                        Please log in to see the details!
+                        Please log in to reserve a seat!
                         </button>
                         </Link>
                         }

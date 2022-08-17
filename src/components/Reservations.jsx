@@ -33,7 +33,7 @@ export const Reservations = (props) => {
             {reservations.length > 0 
             ? reservations.map(x => 
                 <ReservationCards key={x._id} {...x}/>)
-            : <div className="noFilms" >No Films Yet...</div>}
+            : <div className="noFilms" >No Reservations Yet...</div>}
 
         </div>
     )
