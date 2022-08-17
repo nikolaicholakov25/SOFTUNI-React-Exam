@@ -6,11 +6,11 @@ This app uses
 - Java Script
 - HTML
 - CSS
-- SoftUni Practise server for storing user details and films
+- SoftUni Practise server for storing user details and films - https://github.com/softuni-practice-server/softuni-practice-server
 
 ## How To Start The App
 
-In the main folder there are to folders
+In the main folder there are two folders
 
 - App
 - Server
