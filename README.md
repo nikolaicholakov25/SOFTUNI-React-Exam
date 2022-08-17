@@ -1,10 +1,21 @@
-# Getting Started with Create React App
+# Cinema Single Page Application
+This app uses
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- React
+- Font Awesome
+- Java Script
+- HTML
+- CSS
 
-## Available Scripts
+## Functionality
 
-In the project directory, you can run:
+The application allows loged in users to create, edit, delete, like and reserve films
+
+In the app a creator of a film can edit or delete a film
+
+A loged in user, not creator of the film can like and reserve a seat for this film
+
+A guest user can view the film details and film likes, but cannot interact with the films
 
 ### `npm start`
 
