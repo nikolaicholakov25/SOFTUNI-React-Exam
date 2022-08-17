@@ -42,6 +42,8 @@ A loged in user, not creator of the film can Like and Reserve a seat for a film.
 
 A guest user can view the film details and film Likes, but cannot interact with the films.
 
+The Reservation page shows all the films you have reserved a seat for.
+
 ### Error Handling
 
 The Error handling is visible when an user makes a mistake trying to:
