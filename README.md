@@ -63,6 +63,8 @@ There is also a confirmation alert when trying to delete a film.
 
 The app has all its pages split into react (.jsx) components
 
+The app uses routing for every page of the app
+
 I am using "useEffect" for the initial load of the pages to show all the movies, likes, reservation status and film details
 
 "useState" to update the details on the page after an user makes a change

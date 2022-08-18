@@ -28,17 +28,17 @@ export const FilmDetails = () => {
        .then(x => updateStateForLikes())
        .then(t => updateStateForReservation())
 
-    }, [] )
+    }, [userLiked] )
 
     const updateStateForLikes = async () => {
 
         let film = await getFilm(filmId)
+
         for(let i =0;i<film.likes.length;i++){
             if(film.likes[i] === userId){
                 setLiked(true)
             }
             else {
-                // console.log('doestn go in');
             }
         }
     }
@@ -91,6 +91,23 @@ export const FilmDetails = () => {
         .then(x => updateStateForLikes())
     }
 
+    const onDislike = () => {
+        let updatedFilm = film
+
+        if(window.confirm(`Are you sure you want to dislike ${film.title}`)){
+
+            for(let i = 0;i<updatedFilm.likes.length;i++){
+                if(updatedFilm.likes[i] === userId){
+                    updatedFilm.likes.splice(i,1)
+                }
+            }
+            
+            addLikes(filmId,updatedFilm)
+            .then(v => setLiked(false))
+        }
+            
+    }
+
     const loginAlert = () => {
         alert('Please Login to like')
     }
@@ -136,8 +153,8 @@ export const FilmDetails = () => {
                         {userLiked === false
                         ? 
                         <button onClick={onLike} className="like">Like</button>
-                        
-                        : null
+                        :
+                        <button onClick={onDislike}>Dislike</button>
                         }
 
                         {film.likes
@@ -149,7 +166,7 @@ export const FilmDetails = () => {
                         :
                         <Link to={`/login`}>
                         <button>
-                        Please log in to reserve a seat!
+                        Please log in to interact with the film!
                         </button>
                         </Link>
                         }

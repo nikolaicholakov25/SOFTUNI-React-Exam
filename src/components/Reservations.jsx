@@ -27,7 +27,6 @@ export const Reservations = (props) => {
         })
     },[])
     
-    console.log(reservations);
     return (
         <div className="homegallery">
             {reservations.length > 0 
