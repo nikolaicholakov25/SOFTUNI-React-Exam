@@ -9,3 +9,22 @@
     width: 90%;
     margin: auto;
 }
+
+.card a {
+    width: 30px;
+    height: 30px;
+    z-index: 100;
+    position: absolute;
+    text-align: center;
+    transition: all linear 0.2s;
+    border-radius: .4em;
+    font-size: 2rem;
+    color: rgb(252, 39, 39);
+    right: 1.5rem;
+    top: -2.5rem;
+}
+.card a:hover  {
+    transform: scale(1.25);
+    cursor: pointer;
+}
+

@@ -25,6 +25,7 @@ export const EditFilmPage = (props) => {
         let form = new FormData(document.getElementById('form'))
 
         let [title,category,description,imageUrl,price] = form.values()
+        
         let film1 = {
             title,
             category,

@@ -6,6 +6,7 @@ import { Reservations } from "./Reservations"
 export const MyReservations = () => {
     let {userSession} = useContext(UserSessionContext)
     let [films,setFilms] = useState({})
+    let [ticketPrice,setPrice] = useState(0)
 
     useEffect(() => {
         getAll()
@@ -15,10 +16,10 @@ export const MyReservations = () => {
 
     return (
         <div className="reservations">
-            <div className="reservationh1"><h1>Reservations for {userSession.email}</h1></div>
+            <div className="reservationh1"><h1>Reservations for {userSession.email} - ${ticketPrice}</h1></div>
             <div className="homeGallery">
             <Reservations
-                films={Object.entries(films)}
+                films={Object.entries(films)} setprice={setPrice} 
                 />
             </div>
         </div>

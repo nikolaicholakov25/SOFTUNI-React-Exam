@@ -76,7 +76,7 @@
     /* flex-basis: 20%; */
     border: 2px solid white;
     padding-bottom: 2px;
-    transition: all linear 0.2s;
+    transition: all linear 0.3s;
 }
 .card img {
     border-radius: 1em;

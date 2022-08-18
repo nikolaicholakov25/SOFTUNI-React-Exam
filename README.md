@@ -52,7 +52,6 @@ The Error handling is visible when an user makes a mistake trying to:
 - Log In
 - Edit a Film
 - Create a Film
-- Like a Film for second time
 - Tries to interact with a Film without loging in
 
 The error handling is in the way of a window alert explaining whats wrong , that way the app will not crash when an error occurs.

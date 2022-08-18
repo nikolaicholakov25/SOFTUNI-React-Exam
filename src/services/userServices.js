@@ -29,7 +29,9 @@ export const login = async (email,password) => {
                 }
             })
             .then(d => sessionStorage.setItem('user' , JSON.stringify(d)))
-            .catch(err => alert(err))
+            .catch(err => {
+                alert(err)
+            })
 
 }
 
