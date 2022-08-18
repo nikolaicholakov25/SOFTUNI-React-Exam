@@ -95,3 +95,15 @@
     width: 100%;
     text-align: center;
 }
+
+
+.marker {
+    font-size: 2rem;
+    color: rgb(220, 5, 5);
+}
+
+.map {
+    margin: auto;
+    transform: translateY(5%);
+}
+ 

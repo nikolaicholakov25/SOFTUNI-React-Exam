@@ -44,7 +44,7 @@ export const Reservations = (props) => {
         let userId = userSession._id
         let film = await getFilm(filmId)
         
-        if(window.confirm('Are you sure you want to delete resevation?')){
+        if(window.confirm(`Are you sure you want to delete "${film.title}" from your resevations?`)){
     
             for(let i =0;i<film.reservations.length;i++){
                 if(film.reservations[i] === userId){

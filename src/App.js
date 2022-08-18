@@ -10,6 +10,7 @@ import { RegisterPage } from './components/RegisterPage';
 import { FilmDetails } from './components/FilmDetails';
 import { EditFilmPage } from './components/EditFilm';
 import { MyReservations } from './components/MyReservations';
+import { SimpleMap } from './googleMaps/map';
 
 function App() {
   let [userSession , setUserSession] = useState(showSession())
@@ -33,6 +34,7 @@ function App() {
           <Route path="/film-details/:filmId" element={<FilmDetails />} />
           <Route path="/edit/:filmId" element={<EditFilmPage />} />
           <Route path="/my-reservations" element={<MyReservations />} />
+          <Route path="/where-to-find-us" element={<SimpleMap />} />
           </Routes>
           </div>
         </UserSessionContext.Provider>
