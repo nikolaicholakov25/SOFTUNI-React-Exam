@@ -3,15 +3,18 @@ import GoogleMapReact from 'google-map-react';
     export function SimpleMap(){
         const defaultProps = {
           center: {
-            lat: 51.51430811670317,
-            lng: -0.13209401203831736
+            lat: 51.49785828747005,
+            lng:  -0.12405758761298069
           },
-          zoom: 15.2
+          zoom: 11
         }
 
     const Marker = () => {
         return (
-           <div className='marker' ><i class="fa-solid fa-location-dot"></i></div> 
+           <div className='marker'>
+           <i class="fa-solid fa-location-pin"></i>
+            <i class="fa-solid fa-film cinema"></i>
+            </div> 
         )
     }
 
@@ -43,6 +46,56 @@ import GoogleMapReact from 'google-map-react';
                 lng={-0.1282116391174352}
                 />
 
+                <Marker 
+                lat={ 51.538794374137474}
+                lng={-0.10361561195799981}
+                />
+
+<Marker 
+                lat={ 51.53881106444383}
+                lng={  -0.14361444122204842}
+                />
+
+
+<Marker 
+                lat={ 51.542438090125316}
+                lng={  -0.1745351308105591}
+                />
+
+<Marker 
+                lat={ 51.4651813789686}
+                lng={ -0.21429969030665796
+                }
+                />
+
+<Marker 
+                lat={ 51.419885620560074}
+                lng={ -0.2045597530008384
+                }
+                />
+<Marker 
+                lat={  51.407116638861176}
+                lng={ -0.03163397893571854
+                }
+                />
+
+<Marker 
+                lat={ 51.432116739354576}
+                lng={ -0.1286038749890253
+                }
+                />
+
+<Marker 
+                lat={ 51.49602243585862}
+                lng={ -0.04485257320327737
+                }
+                />
+
+<Marker 
+                lat={ 51.49058133136238}
+                lng={ 0.012801282622146045
+                }
+                />
             </GoogleMapReact>
         </div>
     )

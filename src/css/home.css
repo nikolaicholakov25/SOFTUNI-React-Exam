@@ -97,7 +97,7 @@
 }
 
 
-.marker {
+.marker i {
     font-size: 2rem;
     color: rgb(220, 5, 5);
 }
@@ -105,5 +105,10 @@
 .map {
     margin: auto;
     transform: translateY(5%);
+}
+
+.marker .cinema {
+    color: white;
+    transform: translateY(-110%) translateX(-12%) scale(0.4);
 }
  
