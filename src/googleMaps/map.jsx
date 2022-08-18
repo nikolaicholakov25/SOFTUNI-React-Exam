@@ -3,10 +3,10 @@ import GoogleMapReact from 'google-map-react';
     export function SimpleMap(){
         const defaultProps = {
           center: {
-            lat: 51.49785828747005,
-            lng:  -0.12405758761298069
+            lat: 51.47881634398394,
+            lng:  -0.09752568358155979
           },
-          zoom: 11
+          zoom: 11.6
         }
 
     const Marker = () => {
@@ -19,7 +19,7 @@ import GoogleMapReact from 'google-map-react';
     }
 
     return (
-        <div className="map" id="map" style={{ height: '80%', width: '90%' }}>
+        <div className="map" id="map" style={{ height: '90%', width: '90%' }}>
             {/* <iframe title="map" loading="lazy"  src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJw-wvFdIEdkgRv3GdODKiXOo&key=AIzaSyD_GCC2aBNLy7IdiYIacrEfkojqAhRuHic"></iframe> */}
             <GoogleMapReact
             bootstrapURLKeys={{ key: "AIzaSyD_GCC2aBNLy7IdiYIacrEfkojqAhRuHic" }}
