@@ -10,7 +10,9 @@ This app uses
 
 ## How To Start The App
 
-In the main folder there are two folders
+In the main application folder you need at least these two folders
+
+You will need to install the "server" from https://github.com/softuni-practice-server/softuni-practice-server
 
 - App
 - Server
@@ -30,7 +32,7 @@ there is a pre-made user from the server for testing
 
 username: peter@abv.bg / password: 123456
 
-There are 6 film titles and links to their posters for quicker film creation 
+There are 6 film titles and links to their posters for quicker film creation in "films.txt"
 
 ## Functionality
 
