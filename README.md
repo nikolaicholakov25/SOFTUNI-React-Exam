@@ -11,8 +11,6 @@ This app uses
 
 ## How To Start The App
 
-## A
-
 In the main application folder you need at least these two folders
 
 You will need to install the "server" from https://github.com/softuni-practice-server/softuni-practice-server

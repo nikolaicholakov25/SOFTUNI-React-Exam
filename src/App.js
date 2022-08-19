@@ -10,7 +10,7 @@ import { RegisterPage } from './components/RegisterPage';
 import { FilmDetails } from './components/FilmDetails';
 import { EditFilmPage } from './components/EditFilm';
 import { MyReservations } from './components/MyReservations';
-import { SimpleMap } from './googleMaps/Map';
+import { SimpleMap } from './googleMaps/map';
 
 const App = () => {
   let [userSession , setUserSession] = useState(showSession())
