@@ -6,7 +6,7 @@ import GoogleMapReact from 'google-map-react';
             lat: 51.47881634398394,
             lng:  -0.09752568358155979
           },
-          zoom: 11.6
+          zoom: 11.65
         }
 
     const Marker = () => {
