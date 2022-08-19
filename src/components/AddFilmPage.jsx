@@ -8,6 +8,7 @@ export const AddFilmPage = (props) => {
     let {userSession} = useContext(UserSessionContext)
 
     let navigate = useNavigate()
+    
     const onAddFilm = (e) => {
         e.preventDefault()
 

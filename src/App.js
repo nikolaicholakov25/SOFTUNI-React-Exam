@@ -10,9 +10,9 @@ import { RegisterPage } from './components/RegisterPage';
 import { FilmDetails } from './components/FilmDetails';
 import { EditFilmPage } from './components/EditFilm';
 import { MyReservations } from './components/MyReservations';
-import { SimpleMap } from './googleMaps/map';
+import { SimpleMap } from './googleMaps/Map';
 
-function App() {
+const App = () => {
   let [userSession , setUserSession] = useState(showSession())
   let [change, setChange] = useState(false)
 

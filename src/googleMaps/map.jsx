@@ -1,6 +1,6 @@
 import GoogleMapReact from 'google-map-react';
 
-    export function SimpleMap(){
+    export const SimpleMap = () => {
         const defaultProps = {
           center: {
             lat: 51.47881634398394,
@@ -51,47 +51,47 @@ import GoogleMapReact from 'google-map-react';
                 lng={-0.10361561195799981}
                 />
 
-<Marker 
+                <Marker 
                 lat={ 51.53881106444383}
                 lng={  -0.14361444122204842}
                 />
 
 
-<Marker 
+                <Marker 
                 lat={ 51.542438090125316}
                 lng={  -0.1745351308105591}
                 />
 
-<Marker 
+                <Marker 
                 lat={ 51.4651813789686}
                 lng={ -0.21429969030665796
                 }
                 />
 
-<Marker 
+<               Marker 
                 lat={ 51.419885620560074}
                 lng={ -0.2045597530008384
                 }
                 />
-<Marker 
+                <Marker 
                 lat={  51.407116638861176}
                 lng={ -0.03163397893571854
                 }
                 />
 
-<Marker 
+                <Marker 
                 lat={ 51.432116739354576}
                 lng={ -0.1286038749890253
                 }
                 />
 
-<Marker 
+                <Marker 
                 lat={ 51.49602243585862}
                 lng={ -0.04485257320327737
                 }
                 />
 
-<Marker 
+                <Marker 
                 lat={ 51.49058133136238}
                 lng={ 0.012801282622146045
                 }
