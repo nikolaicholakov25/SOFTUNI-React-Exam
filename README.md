@@ -3,6 +3,7 @@ This app uses
 
 - React
 - Font Awesome
+- google-map-react Library
 - Java Script
 - HTML
 - CSS
@@ -48,6 +49,7 @@ The Reservation page shows all the films you have reserved a seat for.
 
 You can like and then dislike a movie and you can reserve a seat and then delete reservation.
 
+There is a Google Map with a couple of markers for Cinemas around London.
 ### Error Handling
 
 The Error handling is visible when an user makes a mistake trying to:
