@@ -13,13 +13,12 @@ export const MyReservations = () => {
         .then(x => setFilms(x))
     },[])
 
-
     return (
         <div className="reservations">
             <div className="reservationh1"><h1>Reservations for {userSession.email} - ${ticketPrice}</h1></div>
             <div className="homeGallery">
             <Reservations
-                films={Object.entries(films)} setprice={setPrice} 
+                 setprice={setPrice} 
                 />
             </div>
         </div>

@@ -10,7 +10,7 @@ export const FilmDetails = () => {
     let userId
 
     if(userSession){
-        userId = userSession._id
+        userId = userSession.uid
     }
 
 
@@ -24,7 +24,7 @@ export const FilmDetails = () => {
 
     useEffect(() => {
        getFilm(filmId)
-       .then(r => setFilm(r))
+       .then(r => setFilm(r.data()))
        .then(x => updateStateForLikes())
        .then(t => updateStateForReservation())
 
@@ -33,9 +33,11 @@ export const FilmDetails = () => {
     const updateStateForLikes = async () => {
 
         let film = await getFilm(filmId)
+        let res = film.data()
 
-        for(let i =0;i<film.likes.length;i++){
-            if(film.likes[i] === userId){
+
+        for(let i =0;i<res.likes.length;i++){
+            if(res.likes[i] === userId){
                 setLiked(true)
             }
             else {
@@ -53,8 +55,9 @@ export const FilmDetails = () => {
 
     const updateStateForReservation = async () => {
         let film = await getFilm(filmId)
-        for(let i =0;i<film.reservations.length;i++){
-            if(film.reservations[i] === userId){
+        let res = film.data()
+        for(let i =0;i<res.reservations.length;i++){
+            if(res.reservations[i] === userId){
                 setReserved(true)
             }
             else {
@@ -66,7 +69,6 @@ export const FilmDetails = () => {
     const reserveASeat = () => {
         let updatedFilm = film
         updatedFilm.reservations.push(userId)
-        console.log(film);
 
         reserveSeat(filmId,updatedFilm)
         .then(x => updateStateForReservation())
@@ -86,7 +88,6 @@ export const FilmDetails = () => {
     const onLike =  () => {
         let updatedFilm = film
         updatedFilm.likes.push(userId)
-
         addLikes(filmId, updatedFilm)
         .then(x => updateStateForLikes())
     }

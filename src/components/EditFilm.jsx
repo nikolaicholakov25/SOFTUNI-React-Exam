@@ -12,10 +12,9 @@ export const EditFilmPage = (props) => {
 
     useEffect(() => {
         getFilm(filmId)
-        .then(x => setFilm(x))
+        .then(x => setFilm(x.data()))
     },[])
 
-    console.log(film);
 
     let navigate = useNavigate()
 
@@ -32,7 +31,7 @@ export const EditFilmPage = (props) => {
             description,
             imageUrl,
             price,
-            creatorId: userSession._id,
+            creatorId: userSession.uid,
             likes: film.likes,
             reservations: film.reservations
         }

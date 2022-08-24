@@ -22,7 +22,7 @@ export const AddFilmPage = (props) => {
             description,
             imageUrl,
             price,
-            creatorId: userSession._id,
+            creatorId: userSession.uid,
             likes: [],
             reservations: []
         }

@@ -1,117 +1,57 @@
 import { showSession } from "./userServices"
+import {
+addDoc,
+deleteDoc,
+doc,
+getDoc, 
+getDocs, 
+setDoc, 
+updateDoc,
 
-const url = 'http://localhost:3030/jsonstore/'
+} from 'firebase/firestore'
+import { dataBase } from "./firebaseConfig"
 
-export const getAll = () => {
-    let suffix = "films"
-
-    return fetch(`${url}${suffix}`)
-    .then(res => res.json())
+export const getAll = async () => {
+    let films = await getDocs(dataBase)
+    let arr = []
+    films.forEach(film => arr.push({
+        film: film.data(),
+        id: film.id
+    }))
+    return arr
 }
 
-export const getFilm = (id) => {
-    let suffix = `films/${id}`
-
-    return fetch(`${url}${suffix}`)
-    .then(res => res.json())
+export const getFilm = async (id) => {
+    let docRef = doc(dataBase , id)
+    return await getDoc(docRef)
 }
 
-export const editFilm =(id , body) => {
-    let suffix = `films/${id}`
-
-    let acc = showSession().accessToken
-
-    return fetch(`${url}${suffix}` , {
-        method: 'put',
-        headers: {
-            'content-type' : 'application/json',
-            "X-Authorization": acc
-        },
-        body: JSON.stringify(body)
-
-    })
-    .then(res => res.json())
+export const editFilm = async (id , body) => {
+    let docRef = doc(dataBase , id)
+    return await setDoc(docRef,body)
 
 }
 
-export const createFilm = (film) => {
-    let suffix = `films`
+export const createFilm = async (film) => {
 
-    let acc = showSession().accessToken
+    return await addDoc(dataBase , film)
 
-    return fetch(`${url}${suffix}` , {
-        method: 'post',
-        headers: {
-            'content-type' : 'application/json',
-            "X-Authorization": acc
-        },
-        body: JSON.stringify(film)
-    })
-    .then(res => res.json())
 }
 
 
-export const deleteFilm = (filmId) => {
-    let suffix = `films/${filmId}`
-
-    let acc = showSession().accessToken
-
-    return fetch(`${url}${suffix}` , {
-        method: 'delete',
-        headers: {
-            "X-Authorization": acc
-        },
-    })
-    .then(res => res.json())
-}
-export const getComments = (gameId) => {
-    let suffix = `data/comments?where=gameId%3D%22${gameId}%22`
-
-    return fetch(`${url}${suffix}`)
-    .then(res => res.json())
+export const deleteFilm = async (filmId) => {
+    let docRef = doc(dataBase , filmId)
+    return await deleteDoc(docRef)
 }
 
-export const addComment = (gameId,comment) => {
-    let suffix = `data/comments`
+export const addLikes = async (id,body) => {
+    let docRef = doc(dataBase , id)
 
-    // let acc = showSession().accessToken
-
-    return fetch(`${url}${suffix}` , {
-        method: 'post',
-        headers: {
-            'content-type' : 'application/json',
-            // "X-Authorization": acc
-        },
-        body: JSON.stringify({
-            gameId,
-            comment
-        })
-    })
-    .then(res => res.json())
+   return await setDoc(docRef , body)
 }
 
-export const addLikes = (id,body) => {
-    let suffix = `films/${id}`
+export const reserveSeat = async (id,body) => {
+    let docRef = doc(dataBase , id)
 
-    return fetch(`${url}${suffix}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-    }) 
-    .then(res => res.json())
-}
-
-export const reserveSeat = (id,body) => {
-    let suffix = `films/${id}`
-
-    return fetch(`${url}${suffix}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-    }) 
-    .then(res => res.json())
+   return await setDoc(docRef , body)
 }

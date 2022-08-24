@@ -10,8 +10,8 @@ export const ReservationCards = (props) => {
                     <i class="fa-solid fa-circle-xmark"></i>
                 </div>
             </Link>
-                <img src={props.imageUrl} alt="filmPicture" />
-                <h1 className='cardTitle'>{props.title}</h1>
+                <img src={props.film.imageUrl} alt="filmPicture" />
+                <h1 className='cardTitle'>{props.film.title}</h1>
             </div>
         </Link>
     )

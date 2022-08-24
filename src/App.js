@@ -12,6 +12,8 @@ import { EditFilmPage } from './components/EditFilm';
 import { MyReservations } from './components/MyReservations';
 import { SimpleMap } from './googleMaps/map';
 
+
+
 const App = () => {
   let [userSession , setUserSession] = useState(showSession())
   let [change, setChange] = useState(false)
@@ -22,7 +24,6 @@ const App = () => {
 
   return (
   <>
-    
         <UserSessionContext.Provider value={{userSession , setChange}}>
           <NavBar />
           <div className="App">

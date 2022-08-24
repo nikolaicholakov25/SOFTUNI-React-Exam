@@ -7,7 +7,7 @@ export const LoginPage =() => {
     let navigate = useNavigate()
     let {setChange} = useContext(UserSessionContext)
 
-    const onLogin = async (e) => {
+    const onLogin =  (e) => {
         e.preventDefault()
 
         let form = new FormData(document.getElementById('form'))
@@ -15,6 +15,7 @@ export const LoginPage =() => {
         let [email , password] = form.values()
 
         login(email , password)
+        .then(b => console.log(b))
         .then(r => setChange(x => !x))
         .then(x => navigate('/'))
         .catch(err =>  console.log(err))
