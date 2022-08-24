@@ -13,8 +13,13 @@ This app uses
 
 The app is live / go to https://cinema-app-27cee.web.app/
 
-premade users {
+premade user who have not added any films yet {
     username: peter@abv.bg,
+    password: 123456
+}
+
+premade user who have added 6 films and can edit/delete them {
+    username: nikolaicholakov25@gmail.com,
     password: 123456
 }
 
