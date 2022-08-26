@@ -5,6 +5,9 @@
 @import url('../fontawesome-free-6.1.2-web/css/all.css');
 @import url('./reservations.css');
 @import url('./addGame.css');
+@import url('./responsiveStyles/home.css');
+@import url('./responsiveStyles/navbar.css');
+
 *{
   position: relative;
 }

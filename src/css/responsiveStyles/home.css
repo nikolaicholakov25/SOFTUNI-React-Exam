@@ -1,0 +1,33 @@
+@media (max-width: 500px) {
+    .homegallery{
+        width: 100vw;
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       align-items: center;
+       overflow-y: scroll;
+       padding: 0;
+       margin: 0;
+       gap: 7.6em;
+
+    }
+    .homegallery::-webkit-scrollbar{
+        display: none;
+    }
+
+    .homegallery a {
+        width: 300px;
+        height: 380px;
+        margin: 0%;
+    }
+    .homegallery a > * {
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero {
+        font-size: 1rem;
+        padding: 0;
+        margin: 0%;
+    }
+}
