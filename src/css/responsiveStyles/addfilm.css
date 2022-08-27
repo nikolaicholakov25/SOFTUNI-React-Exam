@@ -1,0 +1,12 @@
+@media (max-width:500px) {
+    .loginForm {
+        margin: auto;
+        width: 80vw;
+        overflow-y: scroll;
+        height: 80vh;
+    }
+
+    .loginForm::-webkit-scrollbar {
+        display: none;
+    }
+}

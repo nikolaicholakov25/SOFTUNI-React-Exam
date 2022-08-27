@@ -18,11 +18,12 @@
         width: 70vw;
         margin: auto;
         margin-top: 3em;
-        height: 50vh;
+        height: 70vh;
     }
 
     .description {
         flex-basis: 85vw;
+        margin-bottom: 4em;
     }
 
     .buttons button {

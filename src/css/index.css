@@ -8,6 +8,8 @@
 @import url('./responsiveStyles/home.css');
 @import url('./responsiveStyles/navbar.css');
 @import url('./responsiveStyles/filmDetails.css');
+@import url('./responsiveStyles/reservations.css');
+@import url('./responsiveStyles/addfilm.css');
 
 *{
   position: relative;

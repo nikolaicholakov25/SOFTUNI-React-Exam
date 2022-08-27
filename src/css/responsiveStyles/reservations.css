@@ -1,0 +1,59 @@
+@media (max-width:500px) {
+    .reservationsGallery{
+        width: 100vw;
+        overflow-y: scroll;
+        height: 95vh;
+        display: flex;
+        flex-direction: column;
+        gap: 4em;
+        /* padding-bottom: 5em */
+    }
+    .reservationh1 {
+        font-size: 0.75rem;
+    }
+
+    .reservationChild:last-child {
+        margin-bottom: 16em;
+    }
+    .reservationsGallery a {
+        margin: auto;
+        color: white;
+        text-decoration: none;
+    }
+
+    .reservationCard {
+        border-radius: 1em;
+        width: 280px;
+        height: 85%;
+        /* flex-basis: 20%; */
+        border: 2px solid white;
+        padding-bottom: 2px;
+        transition: all linear 0.3s;
+    }
+    .reservationChild {
+        margin: auto;
+        /* margin-bottom: 5em; */
+    }
+    .reservationCard img {
+        width: 100%;
+        height: 100%;
+        border-radius: .8em;
+    }
+
+    .reservationsGallery::-webkit-scrollbar{
+        display: none;
+    }
+
+    .removeReservation {
+        position: absolute;
+        z-index: 999;
+        width: 90%;
+    }
+    .removeReservation i {
+        font-size: 3rem;
+        position: absolute;
+        top: .5em;
+        right: .1em;
+        color: red;
+    }
+}

@@ -54,12 +54,12 @@ export const Reservations = (props) => {
     }
 
     return (
-        <div className="homegallery">
+        <>
             {reservations.length > 0 
             ? reservations.map(x => 
                 <ReservationCards key={x.id} remove={removeReservation} {...x}/>)
             : <div className="noFilms" >No Reservations Yet...</div>}
 
-        </div>
+        </>
     )
 }

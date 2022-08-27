@@ -16,7 +16,7 @@ export const MyReservations = () => {
     return (
         <div className="reservations">
             <div className="reservationh1"><h1>Reservations for {userSession.email} - ${ticketPrice}</h1></div>
-            <div className="homeGallery">
+            <div className="reservationsGallery">
             <Reservations
                  setprice={setPrice} 
                 />
