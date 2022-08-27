@@ -1,6 +1,7 @@
 @media (max-width: 500px) {
     .navbar {
         width: 100%;
+        z-index: 9999;
     }
     .logo{
         padding: 1em 0;
@@ -8,39 +9,51 @@
         text-align: center;
     }
     .ul {
-        display: flex;
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 0;
         left: 0;
         background-color: white;
-        width: 100%;
-        height: 100vh;
+        height: 120vh;
+        z-index: 9998;
         transform:  translateY(-4.6%);
         transition: all 0.3s linear;
+        overflow: hidden;
+        
+    }
 
+    .openUl {
+        width: 100%;
+        overflow: hidden;
     }
     .ul li {
         z-index: 10000;
         display: block;
         font-size: 1.7rem;
-        margin: .5em 2.5em;
+        margin: 0em 2.5em;
+        margin-top: .7em;
         padding: .5em 0 ;
     }
-    .hamMenu i{
+    .hamMenu i , .hamMenuClose i{
         width: 40px;
         font-size: 3rem;
         height: 100%;
         z-index: 2000;
         color: rgba(0, 0, 0, 0.748);
     }
-    .hamMenu {
-        display: flex;
+    .hamMenu , .hamMenuClose {
+        /* display: flex; */
         justify-content: center;
         margin-top: 1em;
         margin-left: 1em;
         cursor: pointer;
+        z-index: 99999;
     }
 
+    .openMenu {
+        display: block;
+        overflow: hidden;
+    }
 
 }

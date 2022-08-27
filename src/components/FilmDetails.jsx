@@ -123,6 +123,7 @@ export const FilmDetails = () => {
                 <img src={film.imageUrl} alt="filmImg" />
             </div>
 
+
             <div className="description">
                 <h1 className="filmtitle">{film.title}</h1>
                 <div className="descriptionWrapper">
@@ -156,13 +157,13 @@ export const FilmDetails = () => {
                         <button onClick={onLike} className="like">Like</button>
                         :
                         <button onClick={onDislike}>Dislike</button>
-                        }
+                    }
 
                         {film.likes
                         ? 
                         <button onClick={checkLike} className="likes"><i className="fa-solid fa-heart"></i>{film.likes.length}</button>
                         : null
-                        }
+                    }
                         </>
                         :
                         <Link to={`/login`}>

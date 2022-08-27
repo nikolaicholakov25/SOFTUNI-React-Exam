@@ -11,32 +11,45 @@ export const NavBar = () => {
         e.preventDefault()
         logout()
         .then(r => setChange(x => !x))
-        .then(o => showUl())
         .then(x => navigate('/'))
+        .then(o => closeUl())
     }
 
     const showUl = () => {
-        let element = document.getElementsByClassName('ul')[0]
-        let app = document.getElementsByClassName('App')[0]
 
-        if( element.style.display === 'block' ){
-            element.style.display = 'none'
-            app.style.display = 'block'
-        } else {
-            element.style.display = 'block'
-            app.style.display = 'none'
-        }
+        let menu = document.getElementsByClassName('hamMenu')[0]
+        let closeMenu = document.getElementsByClassName('hamMenuClose')[0]
+        let element = document.getElementsByClassName('ul')[0]
+
+        element.classList.add('openMenu')
+        element.classList.add('openUl')
+        menu.classList.remove('openMenu')
+        closeMenu.classList.add('openMenu')
+
     }
 
-    const closeHamMenu = () => {
+    const closeUl = () => {
+        let element = document.getElementsByClassName('ul')[0]
+        let menu = document.getElementsByClassName('hamMenu')[0]
+        let closeMenu = document.getElementsByClassName('hamMenuClose')[0]
+
+        element.classList.remove('openMenu')
+        element.classList.remove('openUl')
+        menu.classList.add('openMenu')
+        closeMenu.classList.remove('openMenu')
 
     }
 
     return(
-        <div className="navbar">
-            <div className="hamMenu" onClick={showUl}>
+        <div className="navbar" id="navbar">
+            <div className="hamMenu openMenu" onClick={showUl}>
             <i class="fa-solid fa-bars"></i>
-                </div>
+            </div>
+
+            <div onClick={closeUl} className="hamMenuClose">
+            <i class="fa-solid fa-xmark"></i>
+            </div>
+
             <div className="logo">
                 <Link to={'/'}>CENTRAL CINEMA</Link>
             </div>
@@ -44,18 +57,18 @@ export const NavBar = () => {
                 {userSession 
                 ?
                 <>
-                    <li><Link onClick={showUl} to={'/'}>All Films</Link ></li>
-                    <li><Link onClick={showUl} to={'/my-reservations'} >My Reservations</Link ></li>
-                    <li><Link onClick={showUl}to={'/add-film'}>Add Film</Link ></li>
-                    <li><Link onClick={showUl}to={'/where-to-find-us'}>Where To Find Us</Link ></li>
+                    <li><Link onClick={closeUl} to={'/'}>All Films</Link ></li>
+                    <li><Link onClick={closeUl} to={'/my-reservations'} >My Reservations</Link ></li>
+                    <li><Link onClick={closeUl}to={'/add-film'}>Add Film</Link ></li>
+                    <li><Link onClick={closeUl}to={'/where-to-find-us'}>Where To Find Us</Link ></li>
                     <li><Link  onClick={logoutHandler} to={'/'}>Log Out</Link ></li>
                 </>
                 :
                 <>
-                    <li><Link onClick={showUl} to={'/'}>All Films</Link ></li>
-                    <li><Link onClick={showUl} to={'/where-to-find-us'}>Where To Find Us</Link ></li>
-                    <li><Link onClick={showUl}to={'/login'}>Login</Link ></li>
-                    <li><Link onClick={showUl} to={'/register'}>Register</Link ></li>
+                    <li><Link onClick={closeUl} to={'/'}>All Films</Link ></li>
+                    <li><Link onClick={closeUl} to={'/where-to-find-us'}>Where To Find Us</Link ></li>
+                    <li><Link onClick={closeUl}to={'/login'}>Login</Link ></li>
+                    <li><Link onClick={closeUl} to={'/register'}>Register</Link ></li>
                 </>
                 }
             </ul>
